@@ -1,0 +1,26 @@
+Relatorio 2:
+
+Para a entrega final implementámos as classes do core que faltavam e melhorámos as já implementadas.
+
+Na Page (receiver dos menus de edição e consulta) adicionámos todos os métodos que permitem a interação com
+o textui (Insert, Copy, Delete...) e melhorámos o método Show.
+
+Reformulámos a forma como guardávamos conteudos na pagina, como por exemplo, a associaçao de referências
+com os conteudos que referenciam. Neste momento valor das funçoes e das referências sao calculados no
+momento em que sao necessarios.
+
+Eliminámos qualquer funcionalidade complexa que o textui poderia ter, deixando-o apenas a interagir com o
+utilizador e a chamar métodos da Page.
+
+Tal como especificado no rel1.txt, guardámos os conteudos num objecto da classe ReferenceCellList que é
+implementado com um ArrayList, mas que por ter uma interface genérica, permite flexibilidade na escolha da
+implementaçao (com um Treemap, por exemplo).
+
+Para calcular o valor das funçoes usamos polimorfismo, ou seja, nas superclasses "BinaryFunction" e 
+"IntervalFunction" existe um método calc que faz a procura dos valores que se pretendem calcular, 
+retornando num arraylist de inteiros que posteriormente será usado para o cálculo especifico da classe em questão,
+evitando repetiçao de código.
+
+Para o Menu de Consultas fizemos um visitor que visita a classe ReferenceCellList a partir das classes Search
+e, apesar de termos tido algumas dificuldades, pensamos que o resultado final esteja bom.
+

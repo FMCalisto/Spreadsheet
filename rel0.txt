@@ -1,0 +1,30 @@
+Relatorio 0:
+
+
+Para cada Gestor há N Folhas de calculo que têm Gamas e Estrutura de dados.
+
+A interface Estrutura de Dados vai ser implementada por uma classe Array (em principio), dando funcionalidade
+ao código, visto que podia ser implementada por outra classe.
+
+Gama é a superclasse de Célula e Intervalo para poder-se usar "gama" para identificar qualquer uma
+das outras (polimorfismo).
+
+Intervalo é uma agregaçao de Célula pois cada intervalo tem 2 células.
+
+Célula tem uma dependência com a interface SelecaoDePesquisa para poder ser pesquisada por 2 métodos diferentes.
+Célula tem uma agregaçao com Conteudo pois é um conjunto de conteudos que lhe dá o seu valor e é com o
+conteudo que se copia, insere, etc.
+
+SelecaoDePesquisa tem uma dependência com Conteudo pois é o conteudo que queremos pesquisar.
+
+Literal, Referencia e Funçao são conteudos, portanto subclasse de Conteudo.
+
+Referencia tem uma relaçao com Celula pois o valor dos seus atributos corresponde à posiçao da célula.
+
+Funçao é superclasse de FunçaoBinaria e FunçaoDeIntervalo pois é um conceito que engloba as duas.
+
+FunçaoBinaria recebe um vector de Conteudos (que podem ser referencias ou literais - polimorfismo) como argumentos
+dos seus metodos.
+
+FunçaoDeIntervalo tem uma associação com Intervalo pois utiliza intervalos como argumento dos seus metodos, recebendo
+sempre 2 intervalos.

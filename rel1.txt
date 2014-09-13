@@ -1,0 +1,31 @@
+Relatorio 1: 
+
+O projecto apresenta 2 Receivers (Manager e Page).
+
+O Manager é responsável por gerir o Menu Principal, o estado da folha e por analisar o import com alto
+nível de abstração pois só distingue ReferenceCells de Conteúdos, não lhe interessando os conteudos específicos
+(abstração).
+
+A Page gere os Menus de Edição e Consulta, sendo responsável pelo que acontece ao nível dos conteúdos
+(criar, mandar guardar na estrutura de dados), portanto mais específico que o Manager.
+
+Para desativar as entradas de Menu irrelevantes quando ainda não existe folha (Save, SaveAs, Menu de Edição,
+Menu de Consulta), redefinimos o método isValid() nas classes em questão, de modo a ser falso quando ainda
+não há nenhuma folha criada.
+
+Após várias tentativas para implementar o projecto tal como tinhamos descrito no UML, decidimos reformulá-lo,
+eliminando a classe Range e associando as características da classe Cell com a classe Reference, criando
+uma nova classe: ReferenceCell (que herda da classe Content e contem Conteúdos).
+
+Em relação à forma como se guardam os elementos, mais concretamente, as ReferenceCell, optámos por guardar num
+ArrayList, que tal como exposto no UML, se encontra numa classe específica (ReferenceCellList) que implementar
+a interface "Data Structure" para dar abstração ao código, pois a Page não precisa saber como são guardadas
+as ReferenceCell e podemos mais tarde querer adicionar outra estrutura de dados.
+
+Criámos também uma instância da classe ReferenceCellList (que implementa um ArrayList) para guardar as 
+ReferenceCell que apontam para outras ReferenceCell, pois os Conteudos lidos do import vêm linha a linha 
+e poderíamos estar a associar uma referência a uma célula antes de definirmos o seu valor (da célula).
+Assim, no fim do import o Manager manda correr uma funçao da Page que associa as Referencias para
+Células com os Conteudos que referenciam.
+
+
